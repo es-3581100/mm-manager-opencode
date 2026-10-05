@@ -18,3 +18,36 @@ jobs:
       - run: npm install --ignore-scripts
       - run: npm run check
       - run: npm test
+
+  mm-manager-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout adapter
+        uses: actions/checkout@v4
+
+      - name: Checkout MM-manager Phase-2 core
+        uses: actions/checkout@v4
+        with:
+          repository: es-3581100/MM-manager
+          ref: feat/phase2-agent-context-cli
+          path: mm-manager
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: mm-manager/go.mod
+
+      - name: Build MM-manager core
+        working-directory: mm-manager
+        run: go build -o "$RUNNER_TEMP/appdir-matrix" ./cmd/appdir-matrix
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - run: npm install --ignore-scripts
+
+      - name: Exercise native adapter against real core
+        env:
+          MM_MANAGER_INTEGRATION_BIN: ${{ runner.temp }}/appdir-matrix
+          MM_MANAGER_INTEGRATION_PROJECT: ${{ github.workspace }}/mm-manager/fixtures/project-v1.json
+        run: node --test test/integration-core.test.js
