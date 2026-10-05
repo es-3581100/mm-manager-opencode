@@ -18,6 +18,6 @@
   },
   "scripts": {
     "check": "node --check src/bridge.js && node --check src/index.js",
-    "test": "node --test"
+    "test": "node --test test/bridge.test.js"
   }
 }
