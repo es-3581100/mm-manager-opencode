@@ -4,7 +4,7 @@ Native OpenCode adapter for the [MM-manager](https://github.com/es-3581100/MM-ma
 
 **Status:** v0.1 alpha integration slice  
 **Authority:** read-only context adapter; MM-manager remains the source of truth  
-**Rights:** Copyright © 2026 es-3581100. ALL RIGHTS RESERVED.
+**License:** Evaluation-only source-available license for this alpha. See [`LICENSE`](LICENSE). This is not an open-source license.
 
 ## What this package does
 
@@ -72,3 +72,12 @@ The tests exercise the process bridge without requiring OpenCode or MM-manager.
 ## Compatibility target
 
 The current MM-manager core exposes `normalize|pin|build|verify|compare`; the `agent` query family is the Phase-2 compatibility target. Until that lands in MM-manager, these tools fail closed rather than synthesizing answers locally.
+
+
+## Licensing posture
+
+This alpha is intentionally distributed under a narrow evaluation license while the product and commercial boundary are still being discovered.
+
+The current license permits downloading, installing, running, and evaluating unmodified copies for personal, educational, research, interoperability-testing, and other non-commercial evaluation purposes. It does not grant commercial use, redistribution, derivative-work distribution, hosted-service use, or use of the source/documentation as AI-training, fine-tuning, benchmark, embedding-corpus, retrieval-corpus, or dataset material.
+
+Future releases may use a different license. Rights granted for a particular released version are governed by the license shipped with that version.

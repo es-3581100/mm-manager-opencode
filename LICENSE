@@ -1,0 +1,116 @@
+MM MANAGER OPENCODE EVALUATION LICENSE v0.1
+
+Copyright © 2026 es-3581100. All rights reserved.
+
+1. PURPOSE
+
+This license grants limited permission to evaluate the software while the
+project's long-term product, commercial, and licensing boundaries are still
+being determined.
+
+This is a source-available evaluation license. It is not an open-source
+license and is not represented as OSI-approved.
+
+2. PERMITTED USE
+
+Subject to the terms below, permission is granted to download, install,
+execute, and evaluate unmodified copies of this software for:
+
+- personal use;
+- educational use;
+- non-commercial research;
+- interoperability testing;
+- internal technical evaluation; and
+- other non-commercial evaluation purposes.
+
+You may make copies reasonably necessary to exercise those permissions.
+
+3. NO COMMERCIAL OR SERVICE-PROVIDER RIGHTS
+
+No permission is granted to use this software, in whole or in part, for:
+
+- commercial production use;
+- paid products or services;
+- hosted, managed, SaaS, API, or service-provider offerings;
+- resale, relicensing, sublicensing, or monetization; or
+- incorporation into a commercial product or service,
+
+except under separate written permission from the copyright holder.
+
+4. NO REDISTRIBUTION OR DERIVATIVE DISTRIBUTION
+
+No permission is granted to redistribute, republish, mirror, sublicense,
+sell, or otherwise distribute this software or substantial portions of it.
+
+You may modify a copy privately for evaluation purposes, but no permission is
+granted to distribute modified versions, derivative works, forks, ports, or
+adaptations.
+
+5. MACHINE-LEARNING / DATASET RESTRICTION
+
+No permission is granted to use the software, source code, documentation,
+schemas, examples, generated artifacts, or other expressive project material
+as training, fine-tuning, reinforcement-learning, benchmark, model-evaluation,
+embedding-corpus, retrieval-corpus, synthetic-data, or dataset material for a
+machine-learning or generative-AI system.
+
+No permission is granted to create or distribute a corpus or dataset whose
+substantial contents are copied or derived from this project.
+
+This restriction does not prohibit ordinary execution of the software as a
+tool by an AI-assisted development environment when otherwise permitted by
+this license.
+
+6. MM-MANAGER CORE RIGHTS
+
+This license applies only to the material distributed with this repository.
+It grants no rights in MM-manager, its source code, data contracts, product
+artifacts, branding, patents, or other intellectual property except to the
+extent separately and expressly licensed there.
+
+Use of this adapter with MM-manager does not expand the rights granted in
+MM-manager.
+
+7. NO AUTHORITY OR SECURITY WARRANTY
+
+The software is provided for evaluation purposes only. Context, retrieval,
+evidence, similarity, annotations, receipts, or successful tool execution do
+not grant execution authority or permission in any external system.
+
+8. BRANDING
+
+No permission is granted to use project names, logos, marks, visual identity,
+or other branding in a manner that suggests sponsorship, affiliation,
+endorsement, compatibility certification, or authorization.
+
+9. RESERVATION OF RIGHTS
+
+All rights not expressly granted by this license are reserved.
+
+Public availability of source code is not a grant of additional copyright,
+patent, trademark, trade-secret, commercial, implementation, hosting, or
+service-provider rights.
+
+10. PATENT RIGHTS
+
+No patent license is granted by this license.
+
+11. DISCLAIMER
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SOFTWARE IS PROVIDED "AS IS",
+WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR
+OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR
+THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+12. SEPARATE PERMISSIONS
+
+Commercial, redistribution, derivative-work, deployment, hosting, support,
+or other rights may be granted only through separate written permission from
+the copyright holder.
+
+For permission requests, contact the repository owner through the repository's
+GitHub account.

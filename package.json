@@ -3,7 +3,7 @@
   "version": "0.1.0-alpha.1",
   "description": "Native OpenCode adapter for MM-manager provenance-aware context queries",
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE",
   "exports": "./src/index.js",
   "files": [
     "src",
