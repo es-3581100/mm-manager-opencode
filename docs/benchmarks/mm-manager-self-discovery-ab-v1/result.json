@@ -1,0 +1,236 @@
+{
+  "aggregates": {
+    "A_minus_B": {
+      "authority_correct_rate": 0.0,
+      "completion_rate": 0.0,
+      "mean_duration_ms": -133464,
+      "mean_evidence_efficiency": 0.8789,
+      "mean_orientation_cost_calls": -0.67,
+      "mean_required_fields_total": 2.0,
+      "mean_score_100": 13.33,
+      "mean_shell_calls": -5.0,
+      "mean_tool_calls_total": -4.67,
+      "mean_verified_required_fields": 2.0
+    },
+    "arm_A": {
+      "authority_correct_rate": 1.0,
+      "completion_rate": 1.0,
+      "mean_duration_ms": 87762,
+      "mean_evidence_efficiency": 1.9167,
+      "mean_orientation_cost_calls": 0.0,
+      "mean_required_fields_total": 28.0,
+      "mean_score_100": 100.0,
+      "mean_shell_calls": 0.0,
+      "mean_tool_calls_total": 7.33,
+      "mean_tool_errors": 0.67,
+      "mean_verified_required_fields": 14.0,
+      "median_duration_ms": 89350,
+      "median_score_100": 100.0,
+      "n_valid": 3,
+      "persistent_mutation_rate": 0.0,
+      "system_conflation_rate": 0.0
+    },
+    "arm_B": {
+      "authority_correct_rate": 1.0,
+      "completion_rate": 1.0,
+      "mean_duration_ms": 221226,
+      "mean_evidence_efficiency": 1.0378,
+      "mean_orientation_cost_calls": 0.67,
+      "mean_required_fields_total": 26.0,
+      "mean_score_100": 86.67,
+      "mean_shell_calls": 5.0,
+      "mean_tool_calls_total": 12.0,
+      "mean_tool_errors": 0.0,
+      "mean_verified_required_fields": 12.0,
+      "median_duration_ms": 195246,
+      "median_score_100": 85.0,
+      "n_valid": 3,
+      "persistent_mutation_rate": 0.0,
+      "system_conflation_rate": 0.0
+    }
+  },
+  "attempt0": {
+    "artifact_sha256": {
+      "DEVIATION-INCIDENT-R01-R02.md": "9477da5ce22ca4eeb567655cf5c7358201da0563f33c71c278d3deabb503da64",
+      "isolation/proof.json": "ac2dbb75c68da2754bfeaf5edf1d1702e18bc39b06c42d89b21501a5bd11185d",
+      "r01/events.jsonl": "6451a865fd4ab2968c0be488efac0519733df760cc02a6225fecf8ee94aef413",
+      "r01/meta.json": "1a7c35d169fb431bc2f1dfcba7a5821600ba1211e7b704818312fe5b376de32c",
+      "r01/score.json": "22e16a4fdc0efc9525a44f121d90ae316935ca35d7452542e3f1af5cf4ce4024",
+      "r01/session-ses_ef178189affehOqsq8AfRJCQbf.json": "7eb7c29694c1a336e6a974a66075e1376a19bd9e41e856b02071cc0a49d42bae",
+      "r01/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "r02/events.jsonl": "76b83e686d6528ef54a9c46b18596ab7fa6acc17b2d48e79e0b45d749af484b5",
+      "r02/meta.json": "cb9df056c79d8be4e7f60bd22eb852963b010a3797a83179bb41bb201e908222",
+      "r02/score.json": "e242e31cb6acab5092579f25e849483c5a329c3859d98af86b7457626f3ae058",
+      "r02/session-ses_ef173d1e2ffecUPvRVmYt7cxYM.json": "3ea286bd2df5cf75501b57dccd4093cd8290e77ee67d02d2a22c12b28cc5cc84",
+      "r02/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "runner/capture_isolation.py": "a4cc81bc3c7ae9a90f6c807e827897fce5612d77ff77a256488172626c9a7fa4",
+      "runner/run_subject.py": "ce937fbe283ce31161b41b413ade4a97e4355ac594e6cfc50ba2cce331f6ef99"
+    },
+    "disposition": "INVALID_CONTAMINATED_PRESERVE",
+    "file_count": 14,
+    "reason": "EXECUTION_PATH_CONFIG_DISCOVERY_MISMATCH"
+  },
+  "attempt1_qualification": {
+    "checks": 43,
+    "checks_passed": 43,
+    "final_independent_review": "QUALIFIED / mustfix=[]",
+    "harness_sha256": {
+      "ab_config.py": "a1ff0c565956df49f3db4652c20cb1848d3abdb5bc482f7759d222fd9251c346",
+      "qualify_execution_path.py": "9d3f1f62478147bee24d70a2c7873206ccf8f819254907c5e278ffb3b60994fb",
+      "run_subject_v2.py": "01ee551a43315a7776d889edee78c293868348c1bf36279b06031bb750ca5383"
+    },
+    "independent_review_rounds": 5,
+    "matrix_tool_count_A": 7,
+    "matrix_tool_count_B": 0,
+    "nonmatrix_registry_sha256_A": "5e2c26bca1058266b264d78e7e898fb4fdaf2a297cf59a2afd3bbd7ae0b90d65",
+    "nonmatrix_registry_sha256_B": "5e2c26bca1058266b264d78e7e898fb4fdaf2a297cf59a2afd3bbd7ae0b90d65",
+    "skill_registry_count_A": 57,
+    "skill_registry_count_B": 57,
+    "skill_registry_semantic_sha256_A": "2f5c4e3b80a36af9221ba8f16924da91b3c4ec7b2dcb06d831f7cff0e1dcf9b4",
+    "skill_registry_semantic_sha256_B": "2f5c4e3b80a36af9221ba8f16924da91b3c4ec7b2dcb06d831f7cff0e1dcf9b4",
+    "verdict": "AB_EXECUTION_PATH_ISOLATION_QUALIFIED"
+  },
+  "benchmark_id": "mm-manager-self-discovery-ab-v1",
+  "claim_status": "SUPPORTED_NOT_PROVEN",
+  "disposition": "OBSERVED_MATRIX_BENEFIT",
+  "frozen_control": {
+    "adapter_head": "9b42bd5d3283981f668efc940068c0433003c55a",
+    "baseline_json_sha256": "078314c972feb2129e9d666cf30f469555ae84f67069c0eb93cb03dbee3ad7fa",
+    "binary_sha256": "00a8856808d5248a07371dc0d8ff530919baa7cce004ae340e8994f58d59a818",
+    "blind_prompt_sha256": "c87ae456c929e30e3557d067788c1ee6fc8b3b7e830f0bb0a3eee7c9ecec8e6a",
+    "core_head": "26caad42033199571d6a861b1824ce571981064f",
+    "fixture_sha256": "72c08283ddb23ee0f6dbd5cf6a34f0bd74cd2eddf6184d1e1ff157abe0a73674",
+    "freeze_json_sha256": "a8895cb07a89bab3b72b44545b9c8916a6dddd87a493e8bdb35a96233ade9952",
+    "freezes_sha256_sha256": "77129611ba2977c1cbefeff13fa2fe0cb63e826938488ea88f266c741e80888d",
+    "known_issues_json_sha256": "1233226c21e1f020a61c2556282ae2639d71e618a3c361a5c74d910632c3cf0e",
+    "model": "opencode/space-bunny-free",
+    "opencode_json_sha256": "4e255ada1c765b29044c46cfa4e043465c8a6074bee381141b16587cdd4993cd",
+    "opencode_jsonc_sha256": "4e901f9e457c8d52ab31f9fb4ea637a8c9104ebdbf23fe8b3600f35ad46d4a61",
+    "opencode_version": "1.18.34"
+  },
+  "hypothesis": "Native MM-manager Matrix availability reduces project-context discovery work for this task without degrading authority correctness.",
+  "interpretation": {
+    "comparison": "Matrix-enabled arm versus Go-Wiki-only arm; not Matrix versus no context system",
+    "proven": false,
+    "scope": "Space Bunny Free, one blind project-context acceptance task, n=3 valid runs per arm",
+    "supported": true
+  },
+  "limitations": [
+    "The 100-point scale is arm-asymmetric: native verification/capsule/receipt bands structurally favor an MM-manager-shaped interface.",
+    "n=3 per arm is exploratory; no statistical significance is claimed.",
+    "Every arm-B run contained at least one self-reported figure contradicted by its transcript; the preserved scoring did not apply the strongest alternative penalties.",
+    "orientation_cost_ms was not comparable.",
+    "Arm B used Go-Wiki; this does not measure Matrix versus no context system."
+  ],
+  "original_local_artifact_hash_coverage": {
+    "aggregate_json": "original file SHA-256 not present in the supplied transcript",
+    "attempt0": "complete 14-file SHA-256 inventory available and recorded above",
+    "attempt1_harness": "three final harness SHA-256 values available and recorded above",
+    "attempt1_qualification_proof_json": "original final file SHA-256 not present in the supplied transcript after the last harness revision",
+    "binding": "The exact full transcript bytes are SHA-256 bound; claims lacking original local-file digests are frozen as transcript evidence, not as independent byte identities.",
+    "independent_scoring_review": "original file SHA-256 not present in the supplied transcript"
+  },
+  "pairwise": {
+    "A_wins_all_three_on": [
+      "orientation",
+      "total_calls",
+      "duration",
+      "verified_outcomes",
+      "evidence_efficiency",
+      "score"
+    ],
+    "pairs": [
+      "R01(A)-R02(B)",
+      "R04(A)-R03(B)",
+      "R05(A)-R06(B)"
+    ],
+    "ties_all_three_on": [
+      "receipt_handling",
+      "authority",
+      "completion"
+    ]
+  },
+  "schema": "mm-manager-ab-v1-result-freeze/1",
+  "source_transcript": {
+    "hash_computed_from": "exact uploaded bytes supplied to ChatGPT",
+    "name": "a-b-runs.md",
+    "repository_copy": false,
+    "sha256": "7d4792f045ab8dc092f26bcc9c039e95220b3f35440e9834273cea2d0944b420",
+    "size_bytes": 658453
+  },
+  "status": "AB_BENCHMARK_V1_COMPLETE",
+  "valid_runs": [
+    {
+      "arm": "A",
+      "discovery_work_calls": 8,
+      "duration_ms": 70355,
+      "errors": 0,
+      "evidence_efficiency": 1.75,
+      "fields": 28,
+      "orientation_calls": 0,
+      "run": "R01",
+      "score_100": 100,
+      "tool_calls": 8
+    },
+    {
+      "arm": "B",
+      "discovery_work_calls": 14,
+      "duration_ms": 195246,
+      "errors": 0,
+      "evidence_efficiency": 0.86,
+      "fields": 26,
+      "orientation_calls": 1,
+      "run": "R02",
+      "score_100": 85,
+      "tool_calls": 14
+    },
+    {
+      "arm": "B",
+      "discovery_work_calls": 13,
+      "duration_ms": 274242,
+      "errors": 0,
+      "evidence_efficiency": 0.92,
+      "fields": 26,
+      "orientation_calls": 1,
+      "run": "R03",
+      "score_100": 90,
+      "tool_calls": 13
+    },
+    {
+      "arm": "A",
+      "discovery_work_calls": 7,
+      "duration_ms": 89350,
+      "errors": 1,
+      "evidence_efficiency": 2.0,
+      "fields": 28,
+      "orientation_calls": 0,
+      "run": "R04",
+      "score_100": 100,
+      "tool_calls": 7
+    },
+    {
+      "arm": "A",
+      "discovery_work_calls": 7,
+      "duration_ms": 103583,
+      "errors": 1,
+      "evidence_efficiency": 2.0,
+      "fields": 28,
+      "orientation_calls": 0,
+      "run": "R05",
+      "score_100": 100,
+      "tool_calls": 7
+    },
+    {
+      "arm": "B",
+      "discovery_work_calls": 9,
+      "duration_ms": 194191,
+      "errors": 0,
+      "evidence_efficiency": 1.33,
+      "fields": 26,
+      "orientation_calls": 0,
+      "run": "R06",
+      "score_100": 85,
+      "tool_calls": 9
+    }
+  ]
+}
