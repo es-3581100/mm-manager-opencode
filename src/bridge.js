@@ -4,6 +4,7 @@ export const DEFAULT_TIMEOUT_MS = 15_000
 export const DEFAULT_MAX_OUTPUT_BYTES = 4 * 1024 * 1024
 
 export const AGENT_OPERATIONS = new Set([
+  "discover",
   "bootstrap",
   "resolve",
   "inspect",
