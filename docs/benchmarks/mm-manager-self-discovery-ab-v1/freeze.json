@@ -1,0 +1,31 @@
+{
+  "authority": "none",
+  "benchmark_id": "mm-manager-self-discovery-ab-v1",
+  "claim_status": "SUPPORTED_NOT_PROVEN",
+  "coverage_note": "The repository freeze binds the exact uploaded transcript plus a canonical derived result summary. Original local Attempt-1 proof/reviewer/aggregate files were not available as standalone bytes to this ChatGPT session; where their final SHA-256 values were absent from the transcript, no digest is invented.",
+  "disposition": "OBSERVED_MATRIX_BENEFIT",
+  "files": [
+    {
+      "path": "docs/benchmarks/mm-manager-self-discovery-ab-v1/result.json",
+      "role": "canonical repository summary",
+      "sha256": "d9ffa0d8b26346971660f2c416d2a354faea85dd81267195cf6c594b5a966019",
+      "size": 9511
+    }
+  ],
+  "frozen_at": "2026-10-06",
+  "hypothesis": "Native MM-manager Matrix availability reduces project-context discovery work for this task without degrading authority correctness.",
+  "immutability": {
+    "policy": "Do not rewrite V1 results to incorporate later experiments. New replications must use a new benchmark/version path.",
+    "self_hash_excluded": true
+  },
+  "interpretation": "SUPPORTED_BY_V1_EXPLORATORY_EVIDENCE_NOT_PROVEN",
+  "repository": "es-3581100/mm-manager-opencode",
+  "schema": "mm-manager-ab-v1-repository-freeze/1",
+  "source_evidence": {
+    "name": "a-b-runs.md",
+    "repository_copy": false,
+    "role": "exact uploaded full-run transcript used to derive the repository summary",
+    "sha256": "7d4792f045ab8dc092f26bcc9c039e95220b3f35440e9834273cea2d0944b420",
+    "size": 658453
+  }
+}

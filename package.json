@@ -17,7 +17,7 @@
     "@opencode-ai/plugin": "^1.18.34"
   },
   "scripts": {
-    "check": "node --check src/bridge.js && node --check src/index.js",
-    "test": "node --test test/bridge.test.js"
+    "check": "node --check src/bridge.js && node --check src/compose.js && node --check src/footer.js && node --check src/ui.js && node --check src/index.js",
+    "test": "node --test test/*.test.js"
   }
 }

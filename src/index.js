@@ -1,31 +1,29 @@
-import path from "node:path"
 import { tool } from "@opencode-ai/plugin"
 import { runMatrixAgent } from "./bridge.js"
+import { composeMatrixInvocation } from "./compose.js"
+import { createMatrixFooterRuntime } from "./footer.js"
 
-function projectPath(args, context) {
-  const explicit = args.project?.trim()
-  if (explicit) return explicit
-
-  const configured = process.env.MM_MANAGER_PROJECT?.trim()
-  if (configured) return configured
-
-  const root = context.worktree || context.directory
-  return path.join(root, ".mm-manager", "project.json")
-}
+// OPENCODE PLUGIN ENTRYPOINT — EXPORTS MUST BE PLUGIN FACTORIES ONLY.
+//
+// OpenCode iterates every value of this module namespace and requires each one
+// to be a function (or an object exposing a `server` function). A single
+// non-conforming export -- e.g. a Set constant, a schema/config object, a
+// version string -- throws "Plugin export is not a function", and because the
+// throw discards the whole module's plugin list, the valid factory below would
+// register zero tools.
+//
+// Therefore: constants, helpers, and composition logic live in ./compose.js and
+// ./bridge.js, never here. The invariant is enforced by
+// test/plugin-entrypoint.test.js, which imports this real module namespace.
 
 function render(value) {
   return JSON.stringify(value, null, 2)
 }
 
 async function invoke(operation, args, context, extraFlags = []) {
-  const project = projectPath(args, context)
-  return render(
-    await runMatrixAgent(
-      operation,
-      ["--project", project, ...extraFlags],
-      { cwd: context.worktree || context.directory },
-    ),
-  )
+  const { argv, cwd } = composeMatrixInvocation(operation, args, context, extraFlags)
+  // runMatrixAgent re-prefixes ["agent", operation]; hand it argv's flag tail.
+  return render(await runMatrixAgent(operation, argv.slice(2), { cwd }))
 }
 
 const projectArg = () =>
@@ -35,8 +33,19 @@ const projectArg = () =>
     .optional()
     .describe("MM-manager project/v1 JSON path. Overrides MM_MANAGER_PROJECT.")
 
-export const MMManagerOpenCode = async () => ({
-  tool: {
+export const MMManagerOpenCode = async (input = {}) => {
+  const footer = createMatrixFooterRuntime(input)
+  return {
+    tool: {
+    matrix_discover: tool({
+      description:
+        "Discover the locally installed MM-manager read-only project-context system. No project is required. Returns backend status, supported operations, project-resolution rules, authority invariants, and a safe synthetic fixture for acceptance testing when available. Retrieval never grants execution authority.",
+      args: {},
+      async execute(args, context) {
+        return invoke("discover", args, context)
+      },
+    }),
+
     matrix_bootstrap: tool({
       description:
         "Load the small read-only MM-manager agent bootstrap for a project. Retrieval is evidence only and grants no execution authority.",
@@ -122,5 +131,8 @@ export const MMManagerOpenCode = async () => ({
         return invoke("verify-receipt", args, context, ["--receipt", args.receipt])
       },
     }),
-  },
-})
+    },
+    event: footer.event,
+    dispose: footer.dispose,
+  }
+}
