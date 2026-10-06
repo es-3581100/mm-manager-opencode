@@ -53,6 +53,7 @@ async function patchTextPart(client, part, text) {
       partID: part.id,
     },
     body: { ...part, text },
+    bodySerializer: (value) => JSON.stringify(value),
     headers: { "Content-Type": "application/json" },
     throwOnError: true,
   })
