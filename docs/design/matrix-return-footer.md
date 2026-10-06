@@ -1,6 +1,6 @@
 # Matrix Return Footer Proposal
 
-Status: **PROPOSED / DEFERRED UNTIL A/B TESTING IS COMPLETE**
+Status: **IMPLEMENTED CANDIDATE / A/B V1 FROZEN**
 
 This document specifies a future OpenCode adapter feature for MM-enabled projects. It is intentionally documentation-only. It does not activate a footer, launch a UI server, alter MM-manager core behavior, change OpenCode configuration, or modify the current A/B test surface.
 
@@ -42,7 +42,7 @@ The model must not be instructed to remember or manually emit the footer. Decora
 
 ## Deferred integration requirement
 
-**Do not implement or activate this feature until the current Space Bunny/MM-manager A/B experiment is complete and its baseline/results are frozen.**
+**Freeze gate satisfied:** the Space Bunny/MM-manager A/B v1 experiment is frozen on this implementation branch; the footer remains independently disableable with `MM_MATRIX_FOOTER=0` for reproduction.
 
 Before that point, this proposal must not:
 
