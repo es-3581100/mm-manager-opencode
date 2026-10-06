@@ -1,6 +1,7 @@
 import { tool } from "@opencode-ai/plugin"
 import { runMatrixAgent } from "./bridge.js"
 import { composeMatrixInvocation } from "./compose.js"
+import { createMatrixFooterRuntime } from "./footer.js"
 
 // OPENCODE PLUGIN ENTRYPOINT — EXPORTS MUST BE PLUGIN FACTORIES ONLY.
 //
@@ -32,8 +33,10 @@ const projectArg = () =>
     .optional()
     .describe("MM-manager project/v1 JSON path. Overrides MM_MANAGER_PROJECT.")
 
-export const MMManagerOpenCode = async () => ({
-  tool: {
+export const MMManagerOpenCode = async (input = {}) => {
+  const footer = createMatrixFooterRuntime(input)
+  return {
+    tool: {
     matrix_discover: tool({
       description:
         "Discover the locally installed MM-manager read-only project-context system. No project is required. Returns backend status, supported operations, project-resolution rules, authority invariants, and a safe synthetic fixture for acceptance testing when available. Retrieval never grants execution authority.",
@@ -128,5 +131,8 @@ export const MMManagerOpenCode = async () => ({
         return invoke("verify-receipt", args, context, ["--receipt", args.receipt])
       },
     }),
-  },
-})
+    },
+    event: footer.event,
+    dispose: footer.dispose,
+  }
+}
