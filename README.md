@@ -68,8 +68,10 @@ The footer is added only after OpenCode reports `session.idle`, only to the last
 visible text part of the latest assistant message, never to child/subagent sessions,
 and only once via the marker `<!-- mm-matrix-footer:v1 -->`.
 
-If the project, artifact, sidecar, loopback server, or message update path is
-unavailable, the original assistant response is left unchanged.
+If there is no valid MM project, the original response is left unchanged. If the
+project is valid but the verified HTML artifact or loopback server is unavailable,
+the footer still appears as `Matrix UI unavailable · project: <project-id> · authority: none`.
+Message-update failures remain non-critical and leave the original response intact.
 
 Controls:
 
