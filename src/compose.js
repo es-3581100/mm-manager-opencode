@@ -7,11 +7,11 @@ export const PROJECT_INDEPENDENT_OPERATIONS = new Set(["discover"])
 // Project-scoped operations resolve their project artifact in strict
 // precedence order: explicit tool argument -> MM_MANAGER_PROJECT -> the
 // worktree's own .mm-manager/project.json.
-export function projectPath(args, context) {
+export function projectPath(args, context, env = process.env) {
   const explicit = args.project?.trim()
   if (explicit) return explicit
 
-  const configured = process.env.MM_MANAGER_PROJECT?.trim()
+  const configured = env.MM_MANAGER_PROJECT?.trim()
   if (configured) return configured
 
   const root = context.worktree || context.directory
