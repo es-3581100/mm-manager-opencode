@@ -47,7 +47,7 @@ On OpenCode `session.idle` the adapter:
    transport; and
 8. uses `<!-- mm-matrix-footer:v1 -->` to make the operation idempotent.
 
-If any step fails, the original assistant response is left unchanged.
+Invalid MM project identity leaves the response unchanged. A valid project with an unavailable verified UI uses the non-link `Matrix UI unavailable` footer; response-patch failures remain non-critical.
 
 ## Security / authority
 
