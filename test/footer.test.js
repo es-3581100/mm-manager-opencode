@@ -34,6 +34,12 @@ test("footer is explicit navigation with authority none", () => {
   assert.ok(text.startsWith(FOOTER_MARKER))
 })
 
+test("valid project can render bounded UI-unavailable fallback", () => {
+  const text = formatMatrixFooter({ projectID: "demo", url: null })
+  assert.match(text, /Matrix UI unavailable/)
+  assert.match(text, /authority: none/)
+})
+
 test("append is idempotent", () => {
   const once = appendMatrixFooter("done", ui)
   const twice = appendMatrixFooter(once, ui)
