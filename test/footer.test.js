@@ -81,12 +81,12 @@ test("idle decoration patches the final part exactly once", async () => {
       async messages() {
         return { data: [message] }
       },
-    },
-    _client: {
-      async patch(args) {
-        calls.push(args)
-        message.parts[0] = args.body
-        return { data: args.body }
+      _client: {
+        async patch(args) {
+          calls.push(args)
+          message.parts[0] = args.body
+          return { data: args.body }
+        },
       },
     },
   }
