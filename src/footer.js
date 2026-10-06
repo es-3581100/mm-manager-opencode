@@ -1,8 +1,8 @@
-import { projectPath } from "./compose.js"
+import { readFile } from "node:fs/promises"\n\nimport { projectPath } from "./compose.js"
 import {
   closeMatrixUiServer,
   matrixFooterEnabled,
-  resolveMatrixArtifact,
+  PROJECT_ID_PATTERN,\n  resolveMatrixArtifact,
   startMatrixUiServer,
 } from "./ui.js"
 
@@ -14,9 +14,20 @@ export function formatMatrixFooter({ url, projectID }) {
 
 export function appendMatrixFooter(text, ui) {
   if (typeof text !== "string" || !text) return text
-  if (!ui?.url || !ui?.projectID) return text
+  if (!ui?.projectID) return text
   if (text.includes(FOOTER_MARKER)) return text
   return `${text.replace(/\s+$/, "")}\n\n${formatMatrixFooter(ui)}\n`
+}
+
+async function resolveProjectIdentity(selectedProject) {
+  try {
+    const project = JSON.parse(await readFile(selectedProject, "utf8"))
+    if (project?.schema_version !== "app-dir-matrix.project/v1") return null
+    if (typeof project.project_id !== "string" || !PROJECT_ID_PATTERN.test(project.project_id)) return null
+    return { projectID: project.project_id }
+  } catch {
+    return null
+  }
 }
 
 function unwrap(result) {
@@ -95,9 +106,9 @@ export function createMatrixFooterRuntime(input = {}, options = {}) {
     if (ui) return ui
     if (!uiPromise) {
       uiPromise = (async () => {
-        const selectedProject = projectPath({}, context)
+        const selectedProject = projectPath({}, context, env)\n        const identity = await resolveProjectIdentity(selectedProject)\n        if (!identity) return null
         const artifact = await resolveMatrixArtifact(selectedProject, { env })
-        if (!artifact) return null
+        if (!artifact) return identity
         const started = await startMatrixUiServer(artifact, { env })
         if (started) ui = started
         return started
