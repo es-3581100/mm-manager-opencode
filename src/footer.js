@@ -43,7 +43,7 @@ export function selectFinalTextTarget(messages) {
 }
 
 async function patchTextPart(client, part, text) {
-  const transport = client?._client
+  const transport = client?.session?._client
   if (!transport || typeof transport.patch !== "function") return false
   const response = await transport.patch({
     url: "/session/{id}/message/{messageID}/part/{partID}",
