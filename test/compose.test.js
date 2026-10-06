@@ -21,17 +21,11 @@ test("discover is project independent", () => {
 })
 
 test("project resolution precedence is explicit then env then worktree", () => {
-  const old = process.env.MM_MANAGER_PROJECT
-  try {
-    process.env.MM_MANAGER_PROJECT = "/env/project.json"
-    assert.equal(projectPath({ project: "/explicit/project.json" }, { worktree: "/work" }), "/explicit/project.json")
-    assert.equal(projectPath({}, { worktree: "/work" }), "/env/project.json")
-    delete process.env.MM_MANAGER_PROJECT
-    assert.equal(projectPath({}, { worktree: "/work" }), path.join("/work", ".mm-manager", "project.json"))
-  } finally {
-    if (old === undefined) delete process.env.MM_MANAGER_PROJECT
-    else process.env.MM_MANAGER_PROJECT = old
-  }
+  const context = { worktree: "/work" }
+  const env = { MM_MANAGER_PROJECT: "/env/project.json" }
+  assert.equal(projectPath({ project: "/explicit/project.json" }, context, env), "/explicit/project.json")
+  assert.equal(projectPath({}, context, env), "/env/project.json")
+  assert.equal(projectPath({}, context, {}), path.join("/work", ".mm-manager", "project.json"))
 })
 
 test("project-scoped operations carry --project", () => {
